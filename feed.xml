@@ -3,10 +3,31 @@
     <title>Yaonotes</title>
     <link href="https://yaonotes.org/feed.xml" rel="self" />
     <link href="https://yaonotes.org" />
-    <updated>1970-01-01T01:00:00+01:00</updated>
+    <updated>2019-10-17T16:53:24+02:00</updated>
     <author>
         <name>Xiaozhe Yao</name>
     </author>
     <id>https://yaonotes.org</id>
 
+    <entry>
+        <title>About</title>
+        <author>
+            <name>Xiaozhe Yao</name>
+        </author>
+        <link href="https://yaonotes.org/about.html"/>
+        <id>https://yaonotes.org/about.html</id>
+
+        <updated>2019-10-17T16:53:19+02:00</updated>
+            <summary>
+                <![CDATA[
+                    Here you can find all my lecture notes, basically in mathematics and computer science. Enjoy :)
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Here you can find all my lecture notes, basically in mathematics and computer science.</p>
+<p>Enjoy :)</p>
+            ]]>
+        </content>
+    </entry>
 </feed>
