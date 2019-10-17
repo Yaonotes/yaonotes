@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Yaonotes",
+    "description": "",
+    "home_page_url": "https://yaonotes.org",
+    "feed_url": "https://yaonotes.org/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Xiaozhe Yao"
+    },
+    "items": [
+    ]
+}
