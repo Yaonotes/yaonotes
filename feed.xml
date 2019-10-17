@@ -3,42 +3,10 @@
     <title>Yaonotes</title>
     <link href="https://yaonotes.org/feed.xml" rel="self" />
     <link href="https://yaonotes.org" />
-    <updated>2019-10-17T16:49:51+02:00</updated>
+    <updated>1970-01-01T01:00:00+01:00</updated>
     <author>
         <name>Xiaozhe Yao</name>
     </author>
     <id>https://yaonotes.org</id>
 
-    <entry>
-        <title>Books</title>
-        <author>
-            <name>Xiaozhe Yao</name>
-        </author>
-        <link href="https://yaonotes.org/books.html"/>
-        <id>https://yaonotes.org/books.html</id>
-
-        <updated>2019-10-17T16:48:36+02:00</updated>
-            <summary></summary>
-        <content></content>
-    </entry>
-    <entry>
-        <title>Lecture Notes</title>
-        <author>
-            <name>Xiaozhe Yao</name>
-        </author>
-        <link href="https://yaonotes.org/lecture-notes.html"/>
-        <id>https://yaonotes.org/lecture-notes.html</id>
-
-        <updated>2019-10-17T16:46:15+02:00</updated>
-            <summary>
-                <![CDATA[
-                    This are Lecture Notes:
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                This are Lecture Notes:
-            ]]>
-        </content>
-    </entry>
 </feed>

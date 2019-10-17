@@ -9,31 +9,5 @@
         "name": "Xiaozhe Yao"
     },
     "items": [
-        {
-            "id": "https://yaonotes.org/books.html",
-            "url": "https://yaonotes.org/books.html",
-            "title": "Books",
-            "author": {
-                "name": "Xiaozhe Yao"
-            },
-            "tags": [
-            ],
-            "date_published": "2019-10-17T16:48:36+02:00",
-            "date_modified": "2019-10-17T16:48:36+02:00"
-        },
-        {
-            "id": "https://yaonotes.org/lecture-notes.html",
-            "url": "https://yaonotes.org/lecture-notes.html",
-            "title": "Lecture Notes",
-            "summary": "This are Lecture Notes:",
-            "content_html": "This are Lecture Notes:",
-            "author": {
-                "name": "Xiaozhe Yao"
-            },
-            "tags": [
-            ],
-            "date_published": "2019-10-17T16:46:15+02:00",
-            "date_modified": "2019-10-17T16:46:15+02:00"
-        }
     ]
 }
