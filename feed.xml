@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Yaonotes</title>
+    <title>YaoNotes</title>
     <link href="https://yaonotes.org/feed.xml" rel="self" />
     <link href="https://yaonotes.org" />
-    <updated>2019-10-17T19:33:38+02:00</updated>
+    <updated>2019-10-18T02:06:54+02:00</updated>
     <author>
         <name>Xiaozhe Yao</name>
     </author>
