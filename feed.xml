@@ -3,7 +3,7 @@
     <title>YaoNotes</title>
     <link href="https://yaonotes.org/feed.xml" rel="self" />
     <link href="https://yaonotes.org" />
-    <updated>2019-11-02T20:24:46+01:00</updated>
+    <updated>2019-11-03T01:00:35+01:00</updated>
     <author>
         <name>Xiaozhe Yao</name>
     </author>
@@ -17,15 +17,21 @@
         <link href="https://yaonotes.org/about.html"/>
         <id>https://yaonotes.org/about.html</id>
 
-        <updated>2019-11-02T20:23:36+01:00</updated>
+        <updated>2019-11-03T01:00:32+01:00</updated>
             <summary>
                 <![CDATA[
-                    Here you can find all my lecture notes, basically in mathematics and computer science.
+                    Here you can find all my lecture notes, basically in mathematics and computer science. Generall I updated on 1st and 15th every month, but you can still fetch the latest version by compiling the source. Categories: Lecture Notes Books Papers Notes Enjoy :)
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Here you can find all my lecture notes, basically in mathematics and computer science.</p>
+                <p>Here you can find all my lecture notes, basically in mathematics and computer science. Generall I updated on 1st and 15th every month, but you can still fetch the latest version by compiling the <a href="https://github.com/xzyaoi/lecture-notes" target="_blank" rel="noopener noreferrer">source</a>.</p>
+<p>Categories:</p>
+<p><a href="https://yaonotes.org/lecture-notes.html" target="_blank" rel="noopener noreferrer">Lecture Notes</a></p>
+<p><a href="https://yaonotes.org/books.html" target="_blank" rel="noopener noreferrer">Books</a></p>
+<p><a href="https://yaonotes.org/papers.html" target="_blank" rel="noopener noreferrer">Papers Notes</a></p>
+<p> </p>
+<p>Enjoy :)</p>
             ]]>
         </content>
     </entry>
