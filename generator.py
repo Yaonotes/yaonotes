@@ -4,8 +4,7 @@ from pathlib import Path
 import shutil
 from jinja2 import Template
 import yaml
-
-
+import datetime
 def create_folder(folder_path):
     try:
         os.mkdir(folder_path)
@@ -32,7 +31,7 @@ def render(content_list, tplfile):
     with open(tplfile, 'r') as f:
         tpl = f.read()
     template = Template(tpl)
-    result = template.render(content=content_list)
+    result = template.render(content=content_list, last_build=datetime.datetime.now().strftime("%b %d %Y %H:%M:%S"))
     return result
 
 
