@@ -1,0 +1,19 @@
+- name: Lecture Notes
+  link: lecture-notes
+  belongsTo: categories
+  description: Lecture Notes for Mathematics and Computer Science Courses.
+
+- name: Manuscripts
+  link: manuscripts
+  belongsTo: categories
+  description: Unpublished or Preprinted Manuscripts.
+
+- name: Paper Feedbacks
+  link: paper-feedbacks
+  belongsTo: categories
+  description: Feedbacks or notes for papers that I have read.
+
+- name: Datasets
+  link: datasets
+  belongsTo: categories
+  description: Public Datasets that I have created.

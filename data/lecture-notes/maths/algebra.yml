@@ -1,0 +1,4 @@
+- name: An Investigation on $\mathbb{Z}/n\mathbb{Z}$
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/d7t42/?action=download%26mode=render
+  description: $\mathbb{Z}/n\mathbb{Z}$ is the set of all congruence classes of the integers for a modulus $n$. It can be written as $\mathbb{Z}_n$, $\mathbb{Z}/n$ or $\mathbb{Z}/n\mathbb{Z}$. 
+  lastUpdate: 2019-11-12 10:17 AM
