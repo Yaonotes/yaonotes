@@ -5,6 +5,7 @@ import shutil
 from jinja2 import Template
 import yaml
 import datetime
+
 def create_folder(folder_path):
     try:
         os.mkdir(folder_path)
@@ -102,6 +103,7 @@ def parse():
         os.path.join("data", subdir) for subdir in os.listdir("data")
     ]
     for each in primary_folders:
+        create_folder(os.path.join("_site", each[5:]))
         iterate_folders(each)
 
 
