@@ -1,0 +1,17 @@
+- name: CVPM
+  link: https://github.com/autoai-org/CVPM
+  description: Computer Vision Package Manager
+  lastUpdate: 2019-11-12 10:17 AM
+  status: Incubating
+
+- name: Power Meter
+  link: https://github.com/autoai-incubator/powermeter
+  description: Power Meter for GPU tasks
+  status: Initiating
+  lastUpdate: 2019-11-12 10:17 AM
+
+- name: IAE
+  link: https://github.com/autoai-org/IAE
+  description: Integrated Annotation Environment
+  lastUpdate: 2019-11-12 10:17 AM
+  status: Incubating

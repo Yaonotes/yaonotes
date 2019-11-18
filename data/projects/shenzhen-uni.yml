@@ -1,0 +1,11 @@
+- name: CVTron
+  link: https://github.com/unarxiv/CVTron
+  description: Computer Vision Toolbox
+  lastUpdate: 2019-11-12 10:17 AM
+  status: Finished
+
+- name: Industry AI
+  link: https://github.com/unarxiv/labeling
+  description: Collaborative Annotating
+  status: Finished
+  lastUpdate: 2019-11-12 10:17 AM

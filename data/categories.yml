@@ -17,3 +17,8 @@
   link: datasets
   belongsTo: categories
   description: Public Datasets that I have created.
+
+- name: Projects
+  link: projects
+  belongsTo: categories
+  description: Projects that I have involved.

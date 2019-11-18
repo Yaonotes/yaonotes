@@ -1,0 +1,5 @@
+- name: Crosstalk Dataset
+  link: https://github.com/unarxiv/crosstalk-dataset
+  description: A dataset for Crosstalk generator.
+  lastUpdate: 2018-8-20
+  status: Finished
