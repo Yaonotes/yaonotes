@@ -8,7 +8,7 @@ import datetime
 from github import Github
 
 def generate_history():
-    g = Github("06eb5dc0d6d97fa30450c7aab6cfd2afdb4b09f1")
+    g = Github(os.getenv("GITHUB_TOKEN"))
     repo = g.get_repo("xzyaoi/yaonotes")
     contents = []
     commits = repo.get_commits()
