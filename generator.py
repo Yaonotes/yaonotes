@@ -5,10 +5,30 @@ import shutil
 from jinja2 import Template
 import yaml
 import datetime
+from github import Github
+
+def generate_history():
+    g = Github("06eb5dc0d6d97fa30450c7aab6cfd2afdb4b09f1")
+    repo = g.get_repo("xzyaoi/yaonotes")
+    contents = []
+    commits = repo.get_commits()
+    for each in commits:
+        if each.get_statuses().totalCount>0:
+            content = {"name": each.sha, 
+                        "link": each.url, 
+                        "description": each.commit.message,
+                        "lastUpdate": each.get_statuses()[0].updated_at or "Time Unknown"}
+        else:
+            content = {"name": each.sha, 
+            "link": each.url, 
+            "description": each.commit.message,
+            "lastUpdate": "Time Unknown"}
+        contents.append(content)
+    write_file(render(contents, "tpl/list.html"), "_site/history.html")
 
 def create_folder(folder_path):
     try:
-        os.mkdir(folder_path)
+        os.makedirs(folder_path, exist_ok=True)
     except OSError:
         print("Creation of the directory %s failed" % folder_path)
     else:
@@ -105,8 +125,8 @@ def parse():
     for each in primary_folders:
         create_folder(os.path.join("_site", each[5:]))
         iterate_folders(each)
-
+    generate_history()
 
 if __name__ == "__main__":
-    # prepare()
+    prepare()
     parse()
