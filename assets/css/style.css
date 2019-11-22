@@ -2,6 +2,10 @@ body {
 	color: #000;
 	background-color: #fff;
 	font-family: monospace;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3%;
 }
 
 h1, h2, h3, h4, h5, h6 {
