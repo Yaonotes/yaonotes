@@ -37,6 +37,12 @@ def create_folder(folder_path):
 
 def prepare():
     output_path = "./_site"
+    try:
+        shutil.rmtree(
+            "./_site/assets",
+        )
+    except:
+        pass
     create_folder(output_path)
     shutil.copytree(
         "assets/",
@@ -45,7 +51,6 @@ def prepare():
     pathlist = Path("data").glob('./**')
     for each_path in pathlist:
         create_folder(each_path.__str__().replace("data/", "_site/"))
-
 
 def render(content_list, tplfile):
     tpl = ""
