@@ -128,8 +128,11 @@ def parse():
         os.path.join("data", subdir) for subdir in os.listdir("data")
     ]
     for each in primary_folders:
-        create_folder(os.path.join("_site", each[5:]))
-        iterate_folders(each)
+        if each == os.path.join("data", "blogs"):
+            generate_blog()
+        else:
+            create_folder(os.path.join("_site", each[5:]))
+            iterate_folders(each)
     generate_history()
 
 if __name__ == "__main__":

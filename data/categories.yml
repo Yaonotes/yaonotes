@@ -1,3 +1,8 @@
+- name: Blogs
+  link: blogs
+  belongsTo: categories
+  description: My Personal Blogs.
+
 - name: Lecture Notes
   link: lecture-notes
   belongsTo: categories
