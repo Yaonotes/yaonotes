@@ -30,7 +30,7 @@
                     alt="" width="32" height="32" /></td>
             <td style="width:99%"><span class="desc"><b><I>Yao</I></b>notes</span></td>
             <td style="text-align:right;white-space:nowrap">
-                Last Build: Nov 26 2019 02:54:14
+                Last Build: {{ last_build }}
             </td>
             <td style="text-align:right;white-space:nowrap">
                 <a href="/history.html">History</a>
@@ -44,42 +44,11 @@
     </table>
     <hr />
     <div id="content">
-        <table id="index">
-            <thead>
-                <tr>
-                    <td><b>Name</b></td>
-                    <td><b>Description</b></td>
-                    <td><b>Status</b></td>
-                    <td><b>Owner</b></td>
-                    <td><b>Last commit</b></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="..">..</a></td>
-                    <td>Back to parent directory</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                
-                <tr>
-                    <td><a href="ongoing">Ongoing</a></td>
-                    <td>Ongoing</td>
-                    <td><b></b></td>
-                    <td>Xiaozhe Yao</td>
-                    <td>Time Unknown</td>
-                </tr>
-                
-                <tr>
-                    <td><a href="preprints">Preprints</a></td>
-                    <td>Preprints</td>
-                    <td><b></b></td>
-                    <td>Xiaozhe Yao</td>
-                    <td>Time Unknown</td>
-                </tr>
-                
-            </tbody>
+        <a href="../">Back</a>
+        <h1 class="blog_title">{{markdown_title}}</h1>
+        <h3>Nov 26 2019 02:46:06</h3>
+
+        {{markdown_content}}
     </div>
 </body>
 <footer>

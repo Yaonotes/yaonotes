@@ -2,11 +2,11 @@
 import os
 from pathlib import Path
 import shutil
-from jinja2 import Template
+from jinja2 import Template, Environment, PackageLoader
 import yaml
 import datetime
 from github import Github
-
+from markdown2 import markdown
 def generate_history():
     g = Github(os.getenv("GITHUB_TOKEN"))
     repo = g.get_repo("xzyaoi/yaonotes")
@@ -32,7 +32,8 @@ def create_folder(folder_path):
     except OSError:
         print("Creation of the directory %s failed" % folder_path)
     else:
-        print("Successfully created the directory %s " % folder_path)
+        # print("Successfully created the directory %s " % folder_path)
+        pass
 
 
 def prepare():
@@ -110,7 +111,6 @@ def get_all_contents(path):
 
     return subfolders
 
-
 def iterate_folders(base_path):
     if os.path.isdir(base_path):
         subfolders = get_all_contents(base_path)
@@ -118,7 +118,32 @@ def iterate_folders(base_path):
             if os.path.isdir(each):
                 iterate_folders(each)
 
+def generate_blog_list(posts):
+    write_file(render(posts, "tpl/list.html"),
+                   os.path.join("_site", "blogs", "index.html"))
 
+def generate_blogs(path):
+    posts = []
+    blogs_contents = os.listdir(path)
+    with open("tpl/content.html", 'r') as f:
+        template_string = f.read()
+    template = Template(template_string)
+    for each in blogs_contents:
+        with open(os.path.join(path, each)) as content_file:
+            parsed_md = markdown(content_file.read(), extras=['metadata'])
+            posts.append({
+                "name": parsed_md.metadata['title'], 
+                "link": parsed_md.metadata['title'].replace(" ","-")+".html", 
+                "description": "",
+                "lastUpdate": parsed_md.metadata['datetime']          
+            })
+            content_html = template.render(markdown_content=parsed_md,
+                                           last_build=datetime.datetime.now().strftime("%b %d %Y %H:%M:%S"), 
+                                           markdown_title=parsed_md.metadata['title'], 
+                                           markdown_time=parsed_md.metadata['datetime'])
+            write_file(content_html, os.path.join("_site", "blogs", parsed_md.metadata['title'].replace(" ","-")+".html"))
+
+    generate_blog_list(posts)
 def parse():
     # only for index.html
     index_content = "data/categories.yml"
@@ -129,11 +154,12 @@ def parse():
     ]
     for each in primary_folders:
         if each == os.path.join("data", "blogs"):
-            generate_blog()
+            create_folder(os.path.join("_site", each[5:]))
+            generate_blogs(each)
         else:
             create_folder(os.path.join("_site", each[5:]))
             iterate_folders(each)
-    generate_history()
+    # generate_history()
 
 if __name__ == "__main__":
     prepare()
