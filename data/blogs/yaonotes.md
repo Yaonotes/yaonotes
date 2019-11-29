@@ -1,5 +1,6 @@
 title: Yaonotes is now live!
 datetime: 26 Nov 2019
+summary: A brief Hello World and Blog Test
 -------
 
 Hello world!

@@ -134,13 +134,14 @@ def generate_blogs(path):
             posts.append({
                 "name": parsed_md.metadata['title'], 
                 "link": parsed_md.metadata['title'].replace(" ","-")+".html", 
-                "description": "",
+                "description": parsed_md.metadata['summary'],
                 "lastUpdate": parsed_md.metadata['datetime']          
             })
             content_html = template.render(markdown_content=parsed_md,
                                            last_build=datetime.datetime.now().strftime("%b %d %Y %H:%M:%S"), 
                                            markdown_title=parsed_md.metadata['title'], 
-                                           markdown_time=parsed_md.metadata['datetime'])
+                                           markdown_time=parsed_md.metadata['datetime'],
+                                           summary=parsed_md.metadata['summary'])
             write_file(content_html, os.path.join("_site", "blogs", parsed_md.metadata['title'].replace(" ","-")+".html"))
 
     generate_blog_list(posts)
