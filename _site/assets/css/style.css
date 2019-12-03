@@ -20,11 +20,12 @@ a {
 }
 
 footer {
-	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	text-align: center;
+	position: fixed;
+	order: 999;
 }
 
 img, h1, h2 {
@@ -59,9 +60,22 @@ table td {
 	padding: 0 0.4em;
 }
 
+#content {
+	display: flex;
+	flex-direction: column;
+}
+
 #content table td {
 	vertical-align: top;
 	white-space: nowrap;
+}
+
+#content table {
+	order: 1;
+}
+
+#gitalk-container {
+	order: 2;
 }
 
 #branches tr:hover td,
