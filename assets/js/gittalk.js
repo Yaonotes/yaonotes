@@ -1,6 +1,6 @@
 const gitalk = new Gitalk({
-    clientID: 'Iv1.d69c729180549526',
-    clientSecret: '05ca79722f9106102b4e175e06c0ce2054eb7ed6',
+    clientID: '6952102337c1db123c4b',
+    clientSecret: '224a5a032556d011ab555a48224e938b0146e037',
     repo: 'yaonotes',
     owner: 'xzyaoi',
     admin: ['xzyaoi'],
