@@ -5,6 +5,6 @@
   status: Finished
 - name: OpenKE Review
   link: https://github.com/xzyaoi/openke-review
-  description: Dataset Serialize and Index tool for OpenKE, with code for <Review OpenKE>
+  description: Dataset Serialize and Index tool for OpenKE, with code for Review OpenKE
   lastUpdate: 2019-12-3
   status: Ongoing
