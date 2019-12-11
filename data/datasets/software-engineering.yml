@@ -1,0 +1,5 @@
+- name: Diversity Dataset
+  link: https://github.com/xzyaoi/diversity-in-open-source
+  description: A dataset for Diversity and Code Quality Research.
+  lastUpdate: 2019-12-10
+  status: Finished
