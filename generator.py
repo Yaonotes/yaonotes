@@ -1,3 +1,4 @@
+# coding:utf-8
 # Generator for Yaonotes
 import os
 from pathlib import Path
@@ -7,24 +8,27 @@ import yaml
 import datetime
 from github import Github
 from markdown2 import markdown
+
+
 def generate_history():
     g = Github(os.getenv("GITHUB_TOKEN"))
     repo = g.get_repo("xzyaoi/yaonotes")
     contents = []
     commits = repo.get_commits()
     for each in commits:
-        if each.get_statuses().totalCount>0:
-            content = {"name": each.sha, 
-                        "link": each.url, 
-                        "description": each.commit.message,
-                        "lastUpdate": each.get_statuses()[0].updated_at or "Time Unknown"}
+        if each.get_statuses().totalCount > 0:
+            content = {"name": each.sha,
+                       "link": each.url,
+                       "description": each.commit.message,
+                       "lastUpdate": each.get_statuses()[0].updated_at or "Time Unknown"}
         else:
-            content = {"name": each.sha, 
-            "link": each.url, 
-            "description": each.commit.message,
-            "lastUpdate": "Time Unknown"}
+            content = {"name": each.sha,
+                       "link": each.url,
+                       "description": each.commit.message,
+                       "lastUpdate": "Time Unknown"}
         contents.append(content)
     write_file(render(contents, "tpl/list.html"), "_site/history.html")
+
 
 def create_folder(folder_path):
     try:
@@ -53,12 +57,14 @@ def prepare():
     for each_path in pathlist:
         create_folder(each_path.__str__().replace("data/", "_site/"))
 
+
 def render(content_list, tplfile):
     tpl = ""
     with open(tplfile, 'r') as f:
         tpl = f.read()
     template = Template(tpl)
-    result = template.render(content=content_list, last_build=datetime.datetime.now().strftime("%b %d %Y %H:%M:%S"))
+    result = template.render(content=content_list, last_build=datetime.datetime.now(
+    ).strftime("%b %d %Y %H:%M:%S")).encode("utf-8")
     return result
 
 
@@ -99,17 +105,20 @@ def get_all_contents(path):
                 handle_yml(path, each)
             abspath = os.path.join(path, each)
             if os.path.isdir(abspath):
-                content = {"name": each.capitalize(), "link": each, "description": each.capitalize()}
+                content = {"name": each.capitalize(), "link": each,
+                           "description": each.capitalize()}
                 subfolders.append(abspath)
                 contents.append(content)
             elif abspath.endswith(".yml"):
-                content = {"name": each[:-4].capitalize(), "link": each[:-4], "description": each[:-4].capitalize()}
+                content = {
+                    "name": each[:-4].capitalize(), "link": each[:-4], "description": each[:-4].capitalize()}
                 subfolders.append(abspath)
                 contents.append(content)
         write_file(render(contents, "tpl/list.html"),
                    os.path.join("_site", path[5:], "index.html"))
 
     return subfolders
+
 
 def iterate_folders(base_path):
     if os.path.isdir(base_path):
@@ -118,9 +127,11 @@ def iterate_folders(base_path):
             if os.path.isdir(each):
                 iterate_folders(each)
 
+
 def generate_blog_list(posts):
     write_file(render(posts, "tpl/list.html"),
-                   os.path.join("_site", "blogs", "index.html"))
+               os.path.join("_site", "blogs", "index.html"))
+
 
 def generate_blogs(path):
     posts = []
@@ -132,19 +143,22 @@ def generate_blogs(path):
         with open(os.path.join(path, each)) as content_file:
             parsed_md = markdown(content_file.read(), extras=['metadata'])
             posts.append({
-                "name": parsed_md.metadata['title'], 
-                "link": parsed_md.metadata['title'].replace(" ","-")+".html", 
+                "name": parsed_md.metadata['title'],
+                "link": parsed_md.metadata['title'].replace(" ", "-")+".html",
                 "description": parsed_md.metadata['summary'],
-                "lastUpdate": parsed_md.metadata['datetime']          
+                "lastUpdate": parsed_md.metadata['datetime']
             })
             content_html = template.render(markdown_content=parsed_md,
-                                           last_build=datetime.datetime.now().strftime("%b %d %Y %H:%M:%S"), 
-                                           markdown_title=parsed_md.metadata['title'], 
+                                           last_build=datetime.datetime.now().strftime("%b %d %Y %H:%M:%S"),
+                                           markdown_title=parsed_md.metadata['title'],
                                            markdown_time=parsed_md.metadata['datetime'],
-                                           summary=parsed_md.metadata['summary'])
-            write_file(content_html, os.path.join("_site", "blogs", parsed_md.metadata['title'].replace(" ","-")+".html"))
+                                           summary=parsed_md.metadata['summary']).encode("utf-8")
+            write_file(content_html, os.path.join("_site", "blogs",
+                                                  parsed_md.metadata['title'].replace(" ", "-")+".html"))
 
     generate_blog_list(posts)
+
+
 def parse():
     # only for index.html
     index_content = "data/categories.yml"
@@ -161,6 +175,7 @@ def parse():
             create_folder(os.path.join("_site", each[5:]))
             iterate_folders(each)
     generate_history()
+
 
 if __name__ == "__main__":
     prepare()

@@ -76,6 +76,8 @@ table td {
 
 #gitalk-container {
 	order: 2;
+	width: 80%;
+    align-self: center;
 }
 
 #branches tr:hover td,
