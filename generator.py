@@ -64,7 +64,7 @@ def render(content_list, tplfile):
         tpl = f.read()
     template = Template(tpl)
     result = template.render(content=content_list, last_build=datetime.datetime.now(
-    ).strftime("%b %d %Y %H:%M:%S")).encode("utf-8")
+    ).strftime("%b %d %Y %H:%M:%S"))
     return result
 
 
@@ -152,7 +152,7 @@ def generate_blogs(path):
                                            last_build=datetime.datetime.now().strftime("%b %d %Y %H:%M:%S"),
                                            markdown_title=parsed_md.metadata['title'],
                                            markdown_time=parsed_md.metadata['datetime'],
-                                           summary=parsed_md.metadata['summary']).encode("utf-8")
+                                           summary=parsed_md.metadata['summary'])
             write_file(content_html, os.path.join("_site", "blogs",
                                                   parsed_md.metadata['title'].replace(" ", "-")+".html"))
 
