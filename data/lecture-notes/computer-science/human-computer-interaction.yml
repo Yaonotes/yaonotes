@@ -22,6 +22,12 @@
   lastUpdate: 2020-01-01 02:01 AM
   status: Under Review
 
+- name: 4.1 Testing
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/6cs57/?action=download%26mode=render
+  description: 
+  lastUpdate: 2020-01-03 02:01 AM
+  status: Under Review
+
 - name: 5.1 Design Principles
   link: https://mfr.de-1.osf.io/render?url=https://osf.io/dz42b/?action=download%26mode=render
   description: 
@@ -50,6 +56,12 @@
   link: https://mfr.de-1.osf.io/render?url=https://osf.io/hsajz/?action=download%26mode=render
   description: 
   lastUpdate: 2020-01-02 02:01 AM
+  status: Under Review
+
+- name: 10.1 Interaction Styles
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/fxak5/?action=download%26mode=render
+  description: 
+  lastUpdate: 2020-01-03 02:01 AM
   status: Under Review
 
 - name: 11.1 Text Input
