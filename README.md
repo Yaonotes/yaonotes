@@ -2,7 +2,7 @@
 
 I am sure there will be bugs and mistakes in the documents. It would be 
 appreciated if you could help me correct them. In that case, please 
-write to xiayao@student.ethz.ch.
+write to xiaozhe.yaoi@gmail.com
 
 # License
 
