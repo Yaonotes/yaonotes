@@ -59,7 +59,7 @@
                     <td><b>Name</b></td>
                     <td><b>Description</b></td>
                     <td><b>Status</b></td>
-                    <td><b>Owner</b></td>
+                    <td><b>Author</b></td>
                     <td><b>Last commit</b></td>
                 </tr>
             </thead>
@@ -76,7 +76,7 @@
                     <td><a href="{{item.link}}">{{item.name}}</a></td>
                     <td>{{item.description}}</td>
                     <td><b>{{item.status}}</b></td>
-                    <td>{{item.owner or "Xiaozhe Yao"}}</td>
+                    <td>{{item.author or "Xiaozhe Yao"}}</td>
                     <td>{{item.lastUpdate or "Time Unknown"}}</td>
                 </tr>
                 {% endfor %}
