@@ -142,8 +142,12 @@ def generate_blogs(path):
     for each in blogs_contents:
         with open(os.path.join(path, each)) as content_file:
             parsed_md = markdown(content_file.read(), extras=['metadata'])
+            try:
+                author = parsed_md.metadata['author']
+            except Exception as e:
+                author = "Xiaozhe Yao"
             posts.append({
-                "author": parsed_md.metadata['author'] or "Xiaozhe Yao",
+                "author": author,
                 "name": parsed_md.metadata['title'],
                 "link": parsed_md.metadata['title'].replace(" ", "-")+".html",
                 "description": parsed_md.metadata['summary'],
