@@ -149,7 +149,7 @@ def generate_blogs(path):
             posts.append({
                 "author": author,
                 "name": parsed_md.metadata['title'],
-                "link": parsed_md.metadata['title'].replace(" ", "-")+".html",
+                "link": each.replace(".md",".html"),
                 "description": parsed_md.metadata['summary'],
                 "lastUpdate": parsed_md.metadata['datetime']
             })
@@ -159,7 +159,7 @@ def generate_blogs(path):
                                            markdown_time=parsed_md.metadata['datetime'],
                                            summary=parsed_md.metadata['summary'])
             write_file(content_html, os.path.join("_site", "blogs",
-                                                  parsed_md.metadata['title'].replace(" ", "-")+".html"))
+                                                  each.replace(".md",".html")))
 
     generate_blog_list(posts)
 
@@ -179,7 +179,7 @@ def parse():
         else:
             create_folder(os.path.join("_site", each[5:]))
             iterate_folders(each)
-    generate_history()
+    # generate_history()
 
 
 if __name__ == "__main__":
