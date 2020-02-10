@@ -18,12 +18,12 @@ def generate_history():
     for each in commits:
         if each.get_statuses().totalCount > 0:
             content = {"name": each.sha,
-                       "link": each.url,
+                       "link": each.html_url,
                        "description": each.commit.message,
                        "lastUpdate": each.get_statuses()[0].updated_at or "Time Unknown"}
         else:
             content = {"name": each.sha,
-                       "link": each.url,
+                       "link": each.html_url,
                        "description": each.commit.message,
                        "lastUpdate": "Time Unknown"}
         contents.append(content)
@@ -179,7 +179,7 @@ def parse():
         else:
             create_folder(os.path.join("_site", each[5:]))
             iterate_folders(each)
-    # generate_history()
+    generate_history()
 
 
 if __name__ == "__main__":
