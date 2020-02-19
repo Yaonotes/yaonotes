@@ -10,7 +10,7 @@
   status: In Progress
 - name: Linear algebra explained in four pages.
   author: Ivan Savov
-  link: https://mfr.de-1.osf.io/render?url=https://osf.io/pw4z6/?direct%26mode=render%26action=download%26mode=render
+  link: https://minireference.com/static/tutorials/linear_algebra_in_4_pages.pdf
   description: A very good short description for linear algebra by Ivan Savov.
   lastUpdate: 2020-02-05 10:17 AM
   status: Finished
