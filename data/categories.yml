@@ -27,3 +27,8 @@
   link: projects
   belongsTo: categories
   description: Projects that I have involved.
+
+- name: Videos
+  link: videos
+  belongsTo: categories
+  description: Videos that I have created for demo purpose.

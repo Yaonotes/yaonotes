@@ -1,0 +1,35 @@
+- name: AID Basic Usage
+  link: https://www.youtube.com/watch?v=r9DHFvZpIrw
+  description: AID Basic Use
+  lastUpdate: 2020-02-19 10:17 AM
+  status: Finished
+
+- name: Training models with AID
+  link: https://www.youtube.com/watch?v=RY-yVMKCKDo
+  description: Training models with AID
+  lastUpdate: 2020-02-19 10:17 AM
+  status: Finished
+  
+- name: Use AID Extensions
+  link: https://www.youtube.com/watch?v=0MbTBhT_3CI
+  description: Use AID Extensions
+  lastUpdate: 2020-02-19 10:17 AM
+  status: Finished
+
+- name: Create AID Packages
+  link: https://www.youtube.com/watch?v=7Xr0ogLWrKM
+  description: Create AID Packages
+  lastUpdate: 2020-02-19 10:17 AM
+  status: Finished
+
+- name: CVPM Guidance
+  link: https://www.youtube.com/watch?v=T1GqKRe7OlQ
+  description: Guidance on how to use CVPM
+  lastUpdate: 2020-02-19 10:17 AM
+  status: Finished
+
+- name: Industry AI Guidance
+  link: https://www.youtube.com/watch?v=T1GqKRe7OlQ
+  description: Guidance on how to use Industry AI
+  lastUpdate: 2020-02-19 10:17 AM
+  status: Finished
