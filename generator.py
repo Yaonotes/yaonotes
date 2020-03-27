@@ -179,7 +179,7 @@ def parse():
         else:
             create_folder(os.path.join("_site", each[5:]))
             iterate_folders(each)
-    # generate_history()
+    generate_history()
 
 
 if __name__ == "__main__":
