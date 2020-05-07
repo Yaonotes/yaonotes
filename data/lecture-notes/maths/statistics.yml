@@ -1,0 +1,10 @@
+- name: Distributions
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/mcuy5/?direct%26mode=render%26action=download%26mode=render
+  description: Distributions introduction. 
+  lastUpdate: 2020-05-07 01:00 AM
+  status: In Progress
+- name: Linear Regression
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/vcgd7/?direct%26mode=render%26action=download%26mode=render
+  description: Linear Regression and its properties. 
+  lastUpdate: 2020-05-07 01:00 AM
+  status: In Progress
