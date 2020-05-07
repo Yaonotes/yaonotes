@@ -1,5 +1,5 @@
 - name: Blogs
-  link: blogs
+  link: https://blog.yaonotes.org
   belongsTo: categories
   description: My Personal Blogs.
 
