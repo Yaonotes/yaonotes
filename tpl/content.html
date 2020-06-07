@@ -12,6 +12,13 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     <script src="/assets/js/gittalk.js"></script>
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-168773217-1');
+    </script>
+    <script>
         MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']]
