@@ -7,8 +7,10 @@ from jinja2 import Template, Environment, PackageLoader
 import yaml
 import datetime
 from github import Github
-from markdown2 import markdown
 
+# Global parameters for statistics
+counts = {}
+all_contents = []
 
 def generate_history():
     g = Github(os.getenv("GITHUB_TOKEN"))
@@ -58,6 +60,16 @@ def prepare():
         create_folder(each_path.__str__().replace("data/", "_site/"))
 
 
+def render_stats(total_count, counts, tplfile):
+    tpl = ""
+    with open(tplfile, 'r') as f:
+        tpl = f.read()
+    template = Template(tpl)
+    result = template.render(total_count=total_count, counts=counts, last_build=datetime.datetime.now(
+    ).strftime("%b %d %Y %H:%M:%S"))
+    return result
+
+
 def render(content_list, tplfile):
     tpl = ""
     with open(tplfile, 'r') as f:
@@ -92,6 +104,9 @@ def handle_yml(filepath, yml_file):
         write_file(render(contents, "tpl/list.html"), target)
     else:
         write_file(render([], "tpl/list.html"), target)
+    if(contents is not None):
+        counts[folder_name] = len(contents)
+    return contents
 
 
 def get_all_contents(path):
@@ -102,7 +117,9 @@ def get_all_contents(path):
         files = os.listdir(path)
         for each in files:
             if each.endswith(".yml"):
-                handle_yml(path, each)
+                result = handle_yml(path, each)
+                if result is not None:
+                    all_contents.extend(result)
             abspath = os.path.join(path, each)
             if os.path.isdir(abspath):
                 content = {"name": each.capitalize(), "link": each,
@@ -128,40 +145,11 @@ def iterate_folders(base_path):
                 iterate_folders(each)
 
 
-def generate_blog_list(posts):
-    write_file(render(posts, "tpl/list.html"),
-               os.path.join("_site", "blogs", "index.html"))
-
-
-def generate_blogs(path):
-    posts = []
-    blogs_contents = os.listdir(path)
-    with open("tpl/content.html", 'r') as f:
-        template_string = f.read()
-    template = Template(template_string)
-    for each in blogs_contents:
-        with open(os.path.join(path, each)) as content_file:
-            parsed_md = markdown(content_file.read(), extras=['metadata'])
-            try:
-                author = parsed_md.metadata['author']
-            except Exception as e:
-                author = "Xiaozhe Yao"
-            posts.append({
-                "author": author,
-                "name": parsed_md.metadata['title'],
-                "link": each.replace(".md",".html"),
-                "description": parsed_md.metadata['summary'],
-                "lastUpdate": parsed_md.metadata['datetime']
-            })
-            content_html = template.render(markdown_content=parsed_md,
-                                           last_build=datetime.datetime.now().strftime("%b %d %Y %H:%M:%S"),
-                                           markdown_title=parsed_md.metadata['title'],
-                                           markdown_time=parsed_md.metadata['datetime'],
-                                           summary=parsed_md.metadata['summary'])
-            write_file(content_html, os.path.join("_site", "blogs",
-                                                  each.replace(".md",".html")))
-
-    generate_blog_list(posts)
+def generate_stats():
+    print(counts)
+    print(all_contents)
+    write_file(render_stats(len(all_contents)-1, counts, "tpl/stats.html"),
+               os.path.join("_site", "stats.html"))
 
 
 def parse():
@@ -175,11 +163,11 @@ def parse():
     for each in primary_folders:
         if each == os.path.join("data", "blogs"):
             create_folder(os.path.join("_site", each[5:]))
-            generate_blogs(each)
         else:
             create_folder(os.path.join("_site", each[5:]))
             iterate_folders(each)
     generate_history()
+    generate_stats()
 
 
 if __name__ == "__main__":
