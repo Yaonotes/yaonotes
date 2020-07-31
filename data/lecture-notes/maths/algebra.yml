@@ -14,9 +14,15 @@
   description: A very good short description for linear algebra by Ivan Savov.
   lastUpdate: 2020-02-05 10:17 AM
   status: Finished
-- name: Linear algebra II Notes.
+- name: Linear algebra II Notes [Chinese Only].
   author: Xiaozhe Yao
   link: https://mfr.de-1.osf.io/render?url=https://osf.io/9n8dc/?direct%26mode=render%26action=download%26mode=render
   description: My Linear Algebra II Lecture Notes
   lastUpdate: 2020-06-29 22:15PM
+  status: Finished
+- name: Matrix Vector Derivatives [Chinese Only].
+  author: Chong Ruan
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/5ehrq/?direct%26mode=render%26action=download%26mode=render
+  description: Matrix Vector Derivatives For Machine Learning
+  lastUpdate: 2020-07-30 09:15AM
   status: Finished
