@@ -14,3 +14,9 @@
   link: https://mfr.de-1.osf.io/render?url=https://osf.io/byhvc/?action=download%26mode=render
   lastUpdate: 2019-12-9 16:00 PM
   status: Under Review
+- name: "(MBM) Visualizing and Understanding Convolutional Neural Networks with Deconvolution"
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/hbryd/?direct%26mode=render%26action=download%26mode=render
+  description: This report describes the implementation of Tinynet. 
+  lastUpdate: 2020-08-15 16:00 PM
+  status: Tailoring
+
