@@ -6,31 +6,31 @@ import shutil
 from jinja2 import Template, Environment, PackageLoader
 import yaml
 import datetime
-from github import Github
+import requests
+import json
 
 # Global parameters for statistics
 counts = {}
 all_contents = []
 
+def get_commits():
+    g = requests.get("https://api.github.com/repos/xzyaoi/yaonotes/commits", headers={"Accept":"application/vnd.github.v3+json"})
+    result = json.loads(g.text)
+    return result
+
 def generate_history():
-    g = Github(os.getenv("GITHUB_TOKEN"))
-    repo = g.get_repo("xzyaoi/yaonotes")
+    commits = get_commits()
     contents = []
-    commits = repo.get_commits()
     for each in commits:
-        if each.get_statuses().totalCount > 0:
-            content = {"name": each.sha,
-                       "link": each.html_url,
-                       "description": each.commit.message,
-                       "lastUpdate": each.get_statuses()[0].updated_at or "Time Unknown"}
-        else:
-            content = {"name": each.sha,
-                       "link": each.html_url,
-                       "description": each.commit.message,
-                       "lastUpdate": "Time Unknown"}
+        content = {
+            "name":each["sha"][0:8],
+            "status":"Merged",
+            "link":'https://github.com/xzyaoi/yaonotes/commit/'+each["sha"],
+            "description":each['commit']['message'],
+            "lastUpdate": each['commit']['author']['date'],
+        }
         contents.append(content)
     write_file(render(contents, "tpl/list.html"), "_site/history.html")
-
 
 def create_folder(folder_path):
     try:
@@ -110,7 +110,6 @@ def handle_yml(filepath, yml_file):
 
 
 def get_all_contents(path):
-    # print(path)
     contents = []
     subfolders = []
     if os.path.isdir(path):
@@ -146,14 +145,13 @@ def iterate_folders(base_path):
 
 
 def generate_stats():
-    print(counts)
-    print(all_contents)
     write_file(render_stats(len(all_contents)-1, counts, "tpl/stats.html"),
                os.path.join("_site", "stats.html"))
 
 
 def parse():
     # only for index.html
+    '''
     index_content = "data/categories.yml"
     index_content = read_data_file(index_content)
     write_file(render(index_content, "tpl/list.html"), "_site/index.html")
@@ -166,8 +164,9 @@ def parse():
         else:
             create_folder(os.path.join("_site", each[5:]))
             iterate_folders(each)
+    '''
     generate_history()
-    generate_stats()
+    # generate_stats()
 
 
 if __name__ == "__main__":

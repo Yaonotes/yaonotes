@@ -1,4 +1,8 @@
-# Mistakes and Bugs
+# Yaonotes Index
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1014000d-9fd7-46a6-878d-cca238d90fe9/deploy-status)](https://app.netlify.com/sites/clever-euler-1cfafd/deploys)
+
+## Mistakes and Bugs
 
 I am sure there will be bugs and mistakes in the documents. It would be 
 appreciated if you could help me correct them. In that case, please 
