@@ -151,7 +151,6 @@ def generate_stats():
 
 def parse():
     # only for index.html
-    '''
     index_content = "data/categories.yml"
     index_content = read_data_file(index_content)
     write_file(render(index_content, "tpl/list.html"), "_site/index.html")
@@ -164,9 +163,8 @@ def parse():
         else:
             create_folder(os.path.join("_site", each[5:]))
             iterate_folders(each)
-    '''
     generate_history()
-    # generate_stats()
+    generate_stats()
 
 
 if __name__ == "__main__":
