@@ -10,6 +10,11 @@
   status: In Progress
 - name: Probability Models and Axioms
   link: https://mfr.de-1.osf.io/render?url=https://osf.io/jyte2/?direct%26mode=render%26action=download%26mode=render
-  description: Probability Models and Axioms from 6.431x. 
+  description: Probability Models and Axioms from MIT 6.431x. 
   lastUpdate: 2020-09-03 01:00 AM
-  status: In Progress  
+  status: In Progress
+- name: Conditional Probability
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/4xd7q/?direct%26mode=render%26action=download%26mode=render
+  description: Conditional Probability from MIT 6.431x. 
+  lastUpdate: 2020-10-04 01:00 AM
+  status: In Progress
