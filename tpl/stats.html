@@ -6,11 +6,9 @@
     <title>Yaonotes</title>
     <link rel="icon" type="image/png"
         href="https://i.loli.net/2020/01/21/GPqInsOVbMl3rxy.jpg" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     <script src="https://unpkg.com/dayjs"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-    <script src="/assets/js/gittalk.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -33,56 +31,133 @@
 </head>
 
 <body>
-    <table style="width:100%">
-        <tr>
-            <td style="white-space:nowrap"><img
-                    src="https://i.loli.net/2020/01/21/GPqInsOVbMl3rxy.jpg"
-                    alt="" width="32" height="32" /></td>
-            <td style="width:99%">
-                <span class="desc">
-                    <b><I>Yao</I></b>notes
-                </span>
-                <a href="https://sm.ms/image/kzqmlR32bY9chJD"
-                    target="_blank"><img height="32"
-                        src="https://i.loli.net/2020/01/21/kzqmlR32bY9chJD.png"></a>
-            </td>
-            <td style="text-align:right;white-space:nowrap">
-                <a href="/stats.html">Stats</a>
-            </td>
-            <td style="text-align:right;white-space:nowrap">
-                Last Build: {{ last_build }}
-            </td>
-            <td style="text-align:right;white-space:nowrap">
-                <a href="/history.html">History</a>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-            </td>
-        </tr>
-    </table>
+    <div>
+        <nav class="bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-8 w-8"
+                                src="https://tailwindui.com/img/logos/workflow-mark-on-dark.svg"
+                                alt="Workflow logo">
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="/"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">Index</a>
+
+                                <a href="https://blog.yaonotes.org"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Blog</a>
+
+                                <a href="https://photos.yaonotes.org"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Photos</a>
+
+                                <a href="https://github.com/xzyaoi/yaonotes"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Source</a>
+
+                                <a href="https://github.com/sponsors/xzyaoi"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Donate</a>
+                                <a href="/history.html"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">History</a>
+                                <a href="/stats.html"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Stats</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center md:ml-6">
+
+                            <!-- Profile dropdown -->
+                            <div class="ml-3 relative">
+                                <div>
+                                    <button
+                                        class="max-w-xs flex items-center text-sm rounded-full text-white focus:outline-none focus:shadow-solid"
+                                        id="user-menu" aria-label="User menu"
+                                        aria-haspopup="true"></button>
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="https://i.loli.net/2020/01/21/GPqInsOVbMl3rxy.jpg"
+                                        alt="">
+                                    </button>
+                                </div>
+                                <div
+                                    class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <!-- Mobile menu button -->
+                    <button
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+                        <!-- Menu open: "hidden", Menu closed: "block" -->
+                        <svg class="block h-6 w-6" stroke="currentColor"
+                            fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Menu open: "block", Menu closed: "hidden" -->
+                        <svg class="hidden h-6 w-6" stroke="currentColor"
+                            fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    </div>
+    <div class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="/"
+                class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">Index</a>
+
+            <a href="https://blog.yaonotes.org"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Blog</a>
+
+            <a href="https://photos.yaonotes.org"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Photos</a>
+
+            <a href="https://github.com/xzyaoi/yaonotes"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Source</a>
+
+            <a href="https://github.com/sponsors/xzyaoi"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Donate</a>
+            <a href="/history.html"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">History</a>
+            <a href="/stats.html"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Stats</a>
+        </div>
+        <div class="pt-4 pb-3 border-t border-gray-700">
+            <div class="flex items-center px-5 space-x-3">
+                <div class="flex-shrink-0">
+                    <img class="h-10 w-10 rounded-full"
+                        src="https://i.loli.net/2020/01/21/GPqInsOVbMl3rxy.jpg"
+                        alt="">
+                </div>
+                <div class="space-y-1">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold leading-tight text-gray-900">
+                {{ title }}
+            </h1>
+        </div>
+    </header>
+
     <hr />
-    <div id="content">
+    <div id="index">
         <h3>Total Nodes: {{ total_count }}</h3> </br>
 
         {% for key in counts %}
          {{ key }}: {{ counts[key] }}</br>
         {% endfor %}
-
     </div>
 </body>
-<footer>
-    <p>
-        <a href="https://blog.yaonotes.org">Blog</a>
-        <a href="https://photos.yaonotes.org">Photos</a>
-        <a href="https://tinyletter.com/autoai">Subscribe</a>
-        <a href="https://github.com/xzyaoi/yaonotes">Source</a>
-        <a href="https://opencollective.com/autoai">Donate</a>
-        <a href="https://xzyaoi.github.io">About</a>
-        <a
-            href="https://github.com/xzyaoi/yaonotes/blob/master/README.md">README</a>
-    </p>
-</footer>
 
 </html>
