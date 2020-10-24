@@ -31,3 +31,31 @@ table td {
 	margin-left: auto;
 	margin-right: auto;
 }
+a {
+	text-decoration: dashed;
+}
+a.d,
+a.h,
+a.i,
+a.line {
+	text-decoration: none;
+}
+#blob a {
+	color: #777;
+}
+
+#blob a:hover {
+	color: blue;
+	text-decoration: none;
+}
+
+pre a.h:hover,
+pre a.i:hover,
+pre a.d:hover {
+	text-decoration: none;
+}
+#news {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}

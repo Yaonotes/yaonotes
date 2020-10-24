@@ -41,7 +41,6 @@ def create_folder(folder_path):
         # print("Successfully created the directory %s " % folder_path)
         pass
 
-
 def prepare():
     output_path = "./_site"
     try:
@@ -130,7 +129,7 @@ def get_all_contents(path):
                     "name": each[:-4].capitalize(), "link": each[:-4], "description": each[:-4].capitalize()}
                 subfolders.append(abspath)
                 contents.append(content)
-        write_file(render(path, contents, "tpl/list.html"),
+        write_file(render(path[5:].capitalize(), contents, "tpl/list.html"),
                    os.path.join("_site", path[5:], "index.html"))
 
     return subfolders
@@ -143,11 +142,9 @@ def iterate_folders(base_path):
             if os.path.isdir(each):
                 iterate_folders(each)
 
-
 def generate_stats():
     write_file(render_stats(len(all_contents)-1, counts, "tpl/stats.html"),
                os.path.join("_site", "stats.html"))
-
 
 def parse():
     # only for index.html
