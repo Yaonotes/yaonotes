@@ -1,0 +1,11 @@
+- name: C-Lab - Remaster C
+  link: https://clab.yaonotes.org/
+  description: C Course Materials
+  lastUpdate: 2020-11-11 10:17 AM
+  status: In Progress
+
+- name: The Machine Learning Book
+  link: https://ml.yaonotes.org/
+  description: The Machine Learning Book
+  lastUpdate: 2020-11-11 10:17 AM
+  status: In Progress
