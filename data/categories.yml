@@ -3,6 +3,11 @@
   belongsTo: categories
   description: My Personal Blogs.
 
+- name: Blogs
+  link: books
+  belongsTo: categories
+  description: My Personal Books.
+
 - name: Lecture Notes
   link: lecture-notes
   belongsTo: categories
