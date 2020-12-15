@@ -3,7 +3,7 @@
   belongsTo: categories
   description: My Personal Blogs.
 
-- name: Blogs
+- name: Books
   link: books
   belongsTo: categories
   description: My Personal Books.
