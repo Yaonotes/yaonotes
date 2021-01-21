@@ -1,0 +1,50 @@
+- name: Introduction
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/8t7qd/?direct%26mode=render%26action=download%26mode=render
+  description: Introduction
+  lastUpdate: 2020-06-12 12:33 AM
+  status: Finished
+- name: Image Formation
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/cdf4q/?direct%26mode=render%26action=download%26mode=render
+  description: Image Formation
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
+- name: Filtering
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/ap43j/?direct%26mode=render%26action=download%26mode=render
+  description: Filtering
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
+- name: Feature Detection
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/jzbd7/?direct%26mode=render%26action=download%26mode=render
+  description: Feature Detection
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
+- name: Steoreo Vision
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/sdpr9/?direct%26mode=render%26action=download%26mode=render
+  description: Steoreo Vision
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
+- name: Multiview Geometry
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/2zfcq/?direct%26mode=render%26action=download%26mode=render
+  description: Multiview Geometry
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
+- name: Tracking
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/wgntp/?direct%26mode=render%26action=download%26mode=render
+  description: Tracking
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
+- name: 3D Reconstruction
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/kumb6/?direct%26mode=render%26action=download%26mode=render
+  description: 3D Reconstruction
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
+- name: Inertial Measurement
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/u5efd/?direct%26mode=render%26action=download%26mode=render
+  description: Inertial Measurement
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
+- name: Event Camera
+  link: https://mfr.de-1.osf.io/render?url=https://osf.io/kfhm6/?direct%26mode=render%26action=download%26mode=render
+  description: Event Camera System
+  lastUpdate: 2020-06-13 12:33 AM
+  status: Finished
