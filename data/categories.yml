@@ -13,6 +13,12 @@
   belongsTo: categories
   description: Lecture Notes for Mathematics and Computer Science Courses.
 
+- name: Lecture Notes (Notion)
+  link: https://www.notion.so/xzyao/54a16b9d37dc46f6a56de7303fa51f7a?v=380b07947a4b4fd1a167104ad0df34cf
+  belongsTo: categories
+  description: Newer Lecture Notes.
+
+
 - name: Manuscripts
   link: manuscripts
   belongsTo: categories
